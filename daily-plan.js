@@ -1,0 +1,282 @@
+const DAILY_PLAN={
+  "revision": "2026-11-document-v1",
+  "missions": [
+    {
+      "id": "nov26-1",
+      "name": "整理",
+      "description": "換好衣服、整理睡衣、摺棉被",
+      "stars": 1,
+      "icon": "👕"
+    },
+    {
+      "id": "nov26-2",
+      "name": "用餐",
+      "description": "吃飯在 40 分鐘內完成，飯後幫忙收自己的餐具",
+      "stars": 1,
+      "icon": "🍚"
+    },
+    {
+      "id": "nov26-3",
+      "name": "家事",
+      "description": "完成一件簡單家事：擦桌子、摺衣服、丟垃圾等",
+      "stars": 1,
+      "icon": "🧹"
+    },
+    {
+      "id": "nov26-4",
+      "name": "收拾",
+      "description": "玩完一項玩具後先收好，再換下一項",
+      "stars": 1,
+      "icon": "🧸"
+    },
+    {
+      "id": "nov26-5",
+      "name": "閱讀",
+      "description": "閱讀／親子共讀至少 15 分鐘",
+      "stars": 1,
+      "icon": "📖"
+    },
+    {
+      "id": "nov26-6",
+      "name": "清潔",
+      "description": "自己完成刷牙、配合洗澡，不拖拖拉拉",
+      "stars": 1,
+      "icon": "🪥"
+    },
+    {
+      "id": "nov26-7",
+      "name": "練習",
+      "description": "直排輪／爵士鼓課程認真練習，並完成練習本 4～5 頁",
+      "stars": 1,
+      "icon": "🥁"
+    },
+    {
+      "id": "nov26-8",
+      "name": "作業",
+      "description": "認真完成當天的作業（聯絡簿）",
+      "stars": 1,
+      "icon": "✏️"
+    },
+    {
+      "id": "nov26-9",
+      "name": "主動",
+      "description": "主動完成一件特別棒的事情，不需要大人提醒",
+      "stars": 1,
+      "icon": "💛"
+    },
+    {
+      "id": "nov26-10",
+      "name": "睡前",
+      "description": "晚上 9:40 前完成當日工作，躺在床上準備睡覺",
+      "stars": 1,
+      "icon": "🌙"
+    },
+    {
+      "id": "nov26-11",
+      "name": "起床穿衣",
+      "description": "準時起床並自己穿好衣服、褲子和襪子",
+      "stars": 1,
+      "icon": "👕"
+    },
+    {
+      "id": "nov26-12",
+      "name": "書包餐袋",
+      "description": "自己整理、檢查書包，並收拾餐袋與餐具",
+      "stars": 1,
+      "icon": "🎒"
+    },
+    {
+      "id": "nov26-13",
+      "name": "吃飯",
+      "description": "吃飯在 40 分鐘內完成",
+      "stars": 1,
+      "icon": "🍚"
+    },
+    {
+      "id": "nov26-14",
+      "name": "收拾",
+      "description": "玩具、書本自己收好",
+      "stars": 1,
+      "icon": "🧸"
+    },
+    {
+      "id": "nov26-15",
+      "name": "歸位",
+      "description": "回家後把鞋子、書包放到固定位置",
+      "stars": 1,
+      "icon": "👟"
+    },
+    {
+      "id": "nov26-16",
+      "name": "清潔",
+      "description": "洗澡、刷牙能配合完成，不一直拖延",
+      "stars": 1,
+      "icon": "🪥"
+    },
+    {
+      "id": "nov26-17",
+      "name": "複習",
+      "description": "每天認真完成課業複習／老師交代的學習任務",
+      "stars": 1,
+      "icon": "📚"
+    },
+    {
+      "id": "nov26-18",
+      "name": "主動",
+      "description": "主動完成一件好行為：幫忙、整理或貼心行動",
+      "stars": 1,
+      "icon": "💛"
+    },
+    {
+      "id": "nov26-19",
+      "name": "主動",
+      "description": "主動完成一件好行為：幫忙、整理或貼心行動",
+      "stars": 2,
+      "icon": "💛"
+    },
+    {
+      "id": "nov26-20",
+      "name": "餐具",
+      "description": "吃完飯幫忙收自己的餐具",
+      "stars": 1,
+      "icon": "🍽️"
+    },
+    {
+      "id": "nov26-21",
+      "name": "作業",
+      "description": "認真完成當天的作業（親子閱讀）",
+      "stars": 1,
+      "icon": "✏️"
+    }
+  ],
+  "rewards": [
+    {
+      "id": "nov26-reward-1",
+      "cost": 20,
+      "name": "睡前多選一本故事",
+      "icon": "📚"
+    },
+    {
+      "id": "nov26-reward-2",
+      "cost": 40,
+      "name": "多 20 分鐘遊戲／卡通時間",
+      "icon": "🎮"
+    },
+    {
+      "id": "nov26-reward-3",
+      "cost": 80,
+      "name": "200 元以內的玩具",
+      "icon": "🧸"
+    },
+    {
+      "id": "nov26-reward-4",
+      "cost": 100,
+      "name": "選一次想吃的餐點",
+      "icon": "🍽️"
+    },
+    {
+      "id": "nov26-reward-5",
+      "cost": 150,
+      "name": "500 元以內的玩具",
+      "icon": "🎁"
+    },
+    {
+      "id": "nov26-reward-6",
+      "cost": 200,
+      "name": "選一次週末親子活動",
+      "icon": "🏕️"
+    },
+    {
+      "id": "nov26-reward-7",
+      "cost": 300,
+      "name": "1000 元以內的玩具",
+      "icon": "🚀"
+    }
+  ],
+  "rewardRevision": "2026-11-rewards-v1",
+  "weekdays": {
+    "0": [
+      "nov26-1",
+      "nov26-2",
+      "nov26-3",
+      "nov26-4",
+      "nov26-5",
+      "nov26-6",
+      "nov26-7",
+      "nov26-8",
+      "nov26-9",
+      "nov26-10"
+    ],
+    "1": [
+      "nov26-11",
+      "nov26-12",
+      "nov26-13",
+      "nov26-14",
+      "nov26-15",
+      "nov26-16",
+      "nov26-17",
+      "nov26-7",
+      "nov26-18",
+      "nov26-10"
+    ],
+    "2": [
+      "nov26-11",
+      "nov26-12",
+      "nov26-13",
+      "nov26-14",
+      "nov26-15",
+      "nov26-16",
+      "nov26-17",
+      "nov26-7",
+      "nov26-18",
+      "nov26-10"
+    ],
+    "3": [
+      "nov26-11",
+      "nov26-12",
+      "nov26-13",
+      "nov26-14",
+      "nov26-15",
+      "nov26-16",
+      "nov26-17",
+      "nov26-7",
+      "nov26-18",
+      "nov26-10"
+    ],
+    "4": [
+      "nov26-11",
+      "nov26-12",
+      "nov26-13",
+      "nov26-14",
+      "nov26-15",
+      "nov26-16",
+      "nov26-17",
+      "nov26-7",
+      "nov26-18",
+      "nov26-10"
+    ],
+    "5": [
+      "nov26-11",
+      "nov26-12",
+      "nov26-13",
+      "nov26-14",
+      "nov26-15",
+      "nov26-16",
+      "nov26-17",
+      "nov26-7",
+      "nov26-19"
+    ],
+    "6": [
+      "nov26-1",
+      "nov26-20",
+      "nov26-3",
+      "nov26-4",
+      "nov26-5",
+      "nov26-13",
+      "nov26-6",
+      "nov26-7",
+      "nov26-21",
+      "nov26-9"
+    ]
+  }
+};
