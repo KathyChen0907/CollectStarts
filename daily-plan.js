@@ -1,5 +1,5 @@
 const DAILY_PLAN={
-  "revision": "2026-11-document-v1",
+  "revision": "document-rules-v2",
   "missions": [
     {
       "id": "nov26-1",
@@ -193,7 +193,7 @@ const DAILY_PLAN={
       "icon": "🚀"
     }
   ],
-  "rewardRevision": "2026-11-rewards-v1",
+  "rewardRevision": "reward-rules-v2",
   "weekdays": {
     "0": [
       "nov26-1",

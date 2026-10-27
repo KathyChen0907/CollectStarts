@@ -6,7 +6,7 @@ try{const raw=localStorage.getItem(KEY);if(raw){const parsed=JSON.parse(raw);if(
 const $=id=>document.getElementById(id);
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const localDay=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
-const visibleMissions=()=>state.missions.filter(m=>!m.id.startsWith('nov26-')||DAILY_PLAN.weekdays[new Date().getDay()].includes(m.id));
+const visibleMissions=()=>[...DAILY_PLAN.weekdays[new Date().getDay()].map(id=>state.missions.find(m=>m.id===id)).filter(Boolean),...state.missions.filter(m=>!m.id.startsWith('nov26-'))];
 const balance=()=>state.entries.reduce((sum,e)=>sum+(e.undone?0:e.delta),0);
 let toastTimer;
 function toast(message){$('toast').textContent=message;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3200);}
@@ -19,7 +19,7 @@ $('form').onsubmit=async e=>{e.preventDefault();const button=$('form').querySele
 const input=(name,label,value='',attrs='')=>`<label for="field-${name}">${label}</label><input id="field-${name}" name="${name}" value="${escapeHTML(value)}" ${attrs}>`;
 function addStars(reason,amount,details={}){if(commit(()=>state.entries.push({id:crypto.randomUUID(),time:Date.now(),reason,delta:amount,undone:false,...details}))){$('dialog').close();toast('任務完成！獲得 '+amount+' 顆星星 ✨');}}
 function renderMissions(){
- const items=visibleMissions();const weekday=new Date().toLocaleDateString('zh-TW',{weekday:'long'});$('plan-summary').textContent=weekday+'・'+items.length+' 個項目，共 '+items.reduce((sum,m)=>sum+m.stars,0)+' 顆星星。依文件設定，可在家長設定調整。';
+ const items=visibleMissions();const weekday=new Date().toLocaleDateString('zh-TW',{weekday:'long'});$('plan-summary').textContent=weekday+'・'+items.length+' 個項目，共 '+items.reduce((sum,m)=>sum+m.stars,0)+' 顆星星。任務依獎勵表原文設定。';
  $('missions').innerHTML=items.length?items.map(m=>`<button class="mission" data-mission="${escapeHTML(m.id)}"><span class="emoji">${escapeHTML(m.icon)}</span><span><strong>${escapeHTML(m.name)}</strong><small>${escapeHTML(m.description)}</small></span><span class="plus">+${m.stars} ★</span></button>`).join(''):'<p class="empty">還沒有集星項目，請到家長設定新增。</p>';
 }
 $('missions').onclick=e=>{const button=e.target.closest('[data-mission]');if(button){const m=state.missions.find(m=>m.id===button.dataset.mission);if(m)addStars(m.name,m.stars,{missionId:m.id,day:localDay()});}};
