@@ -3,3 +3,100 @@
 #plan-summary{line-height:1.8}.mission-card .missions{grid-template-columns:1fr}.mission small{line-height:1.7}.mission .plus{flex-shrink:0}.hero-card{align-self:start}
 
 .challenge-switch{display:flex;gap:8px;margin:20px 0 12px;padding:5px;background:#f1f3f8;border-radius:12px}.challenge-switch button{flex:1;background:transparent;border:1px solid transparent;border-radius:9px;color:#78859a;font-size:14px;padding:10px}.challenge-switch button.active{background:white;border-color:#dfe4ed;color:#a5303e;box-shadow:0 2px 6px #17223c0a;font-weight:700}
+
+/* iPad reading layout: compact balance banner, full-width challenges. */
+.shell { max-width: 1280px; padding: 0 32px; }
+header { height: 88px; }
+.intro { padding: 28px 0 24px; align-items: center; }
+h1 { font-size: 30px; line-height: 1.5; margin: 8px 0; }
+h1 br { display: none; }
+.intro p, .date { font-size: 16px; color: #637089; }
+.dashboard { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+.hero-card {
+  display: grid;
+  grid-template-columns: 112px minmax(180px, 1fr) minmax(260px, 340px);
+  grid-template-areas: 'reactor identity themes' 'reactor label themes' 'reactor balance themes' 'reactor total themes';
+  gap: 3px 24px; padding: 24px 30px; text-align: left;
+}
+.hero-top { grid-area: identity; justify-content: flex-start; gap: 16px; font-size: 18px; }
+.pill { font-size: 12px; }
+.reactor { grid-area: reactor; align-self: center; margin: 0; }
+.balance-label { grid-area: label; margin: 7px 0 0; font-size: 16px; }
+.balance { grid-area: balance; justify-content: flex-start; }
+.balance strong { font-size: 58px; }
+.balance span { font-size: 20px; }
+.hero-card #total { grid-area: total; margin: 4px 0 0; font-size: 14px; color: #bdc5d7; }
+.hero-selector { grid-area: themes; align-self: center; border: 0; border-left: 1px solid #ffffff25; margin: 0; padding: 8px 0 8px 18px; }
+.hero-selector button { font-size: 30px; padding: 14px 8px; }
+.hero-selector small { font-size: 13px; }
+.mission-card { padding: 32px; border-radius: 24px; }
+h2 { font-size: 26px; }
+.eyebrow { font-size: 12px; }
+.muted { font-size: 16px; color: #65728a; }
+.tag { font-size: 14px; padding: 9px 12px; }
+.challenge-switch { margin: 24px 0 16px; padding: 6px; gap: 10px; }
+.challenge-switch button { min-height: 60px; font-size: 20px; }
+#plan-summary { font-size: 16px; margin: 16px 0 22px; }
+.mission-card .missions { grid-template-columns: minmax(0, 1fr); gap: 16px; margin: 0; }
+.mission { min-height: 116px; gap: 20px; padding: 24px; border-radius: 16px; background: #f7f9fc; border-color: #dfe5ef; }
+.mission:hover { background: #f0f4fa; border-color: #b7c5db; }
+.mission .emoji { font-size: 34px; padding: 12px; border-radius: 14px; }
+.mission strong { font-size: 24px; line-height: 1.4; font-weight: 750; }
+.mission small { font-size: 19px; line-height: 1.8; margin-top: 8px; color: #53627a; }
+.mission .plus { font-size: 22px; color: #94601d; background: #fff1d6; padding: 10px 14px; border-radius: 12px; }
+.custom { min-height: 56px; font-size: 17px; color: #5b6a82; margin-top: 22px; }
+.quiet { min-height: 48px; font-size: 16px; }
+.rewards { gap: 20px; }
+.reward { padding: 24px; }
+.reward h3 { font-size: 20px; line-height: 1.6; }
+.reward .cost { font-size: 18px; }
+.reward-bottom { font-size: 14px; gap: 12px; flex-wrap: wrap; }
+.redeem { font-size: 16px; padding: 12px 18px; min-height: 48px; }
+.entry { font-size: 17px; padding: 20px 0; }
+.entry small { font-size: 14px; line-height: 1.7; }
+.undo { font-size: 15px; }
+dialog { width: min(560px, 92vw); }
+label, .hint { font-size: 16px; }
+input, .primary { font-size: 18px; }
+.manager-title strong { font-size: 17px; }
+.manager-title small, .manager-row button { font-size: 14px; }
+.management-links button { font-size: 18px; }
+.management-links span { font-size: 14px; }
+@media (min-width: 1100px) {
+  .mission-card .missions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mission { align-items: flex-start; padding: 22px 18px; gap: 14px; }
+  .mission .emoji { padding: 8px; font-size: 30px; }
+  .mission .plus { font-size: 20px; padding: 8px 10px; }
+}
+@media (max-width: 700px) {
+  .shell { padding: 0 16px; }
+  header { height: 78px; gap: 10px; }
+  .brand span { font-size: 16px; }
+  header .quiet { font-size: 14px; padding: 8px 10px; }
+  .intro { padding: 24px 0 18px; }
+  h1 { font-size: 25px; }
+  h1 br { display: initial; }
+  .intro p { font-size: 15px; line-height: 1.8; }
+  .hero-card { grid-template-columns: 76px minmax(0,1fr); grid-template-areas: 'reactor identity' 'reactor label' 'reactor balance' 'reactor total' 'themes themes'; gap: 4px 14px; padding: 22px; }
+  .reactor { width: 76px; height: 76px; padding: 6px; }
+  .reactor div { font-size: 30px; }
+  .hero-top { flex-wrap: wrap; gap: 8px; font-size: 17px; }
+  .balance strong { font-size: 48px; }
+  .hero-selector { border-left: 0; border-top: 1px solid #ffffff25; padding: 12px 0 0; margin-top: 12px; }
+  .hero-selector button { padding: 8px; }
+  .mission-card { padding: 22px 16px; }
+  h2 { font-size: 23px; }
+  .mission-card .tag { display: none; }
+  .challenge-switch button { font-size: 18px; }
+  .mission { display: grid; grid-template-columns: 42px minmax(0,1fr) auto; padding: 20px 14px; gap: 12px; align-items: start; }
+  .mission .emoji { font-size: 28px; padding: 6px; }
+  .mission strong { font-size: 22px; }
+  .mission small { font-size: 18px; }
+  .mission .plus { font-size: 18px; padding: 8px; }
+  .rewards-section > .section-top { align-items: flex-start; flex-wrap: wrap; }
+  .reward { padding: 20px; }
+  .history-section { padding: 20px 16px; }
+  .entry { gap: 10px; font-size: 15px; }
+  .entry > div { min-width: 0; overflow-wrap: anywhere; }
+  footer { flex-wrap: wrap; font-size: 10px; line-height: 1.8; }
+}
