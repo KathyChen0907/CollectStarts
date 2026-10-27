@@ -65,3 +65,18 @@ $('fields').addEventListener('click',e=>{
 });
 
 document.querySelectorAll('[data-challenge]').forEach(button=>button.onclick=()=>commit(()=>{state.challengeOverride={day:localDay(),type:button.dataset.challenge};}));
+
+const pages={
+ challenges:{title:'每一個小進步，都是英雄的力量。',description:'完成生活小任務，把努力變成閃亮的星星。'},
+ rewards:{title:'用努力累積的星星，兌換小小期待。',description:'選一份喜歡的獎勵，讓每一天的進步都有回報。'},
+ history:{title:'每一次努力，都值得記得。',description:'查看獲得星星與兌換的紀錄，誤按也可以在這裡撤銷。'}
+};
+function showPage(moveFocus=false){
+ const requested=location.hash.slice(1),page=Object.hasOwn(pages,requested)?requested:'challenges';
+ document.querySelectorAll('[data-view]').forEach(section=>{section.hidden=section.dataset.view!==page;});
+ document.querySelectorAll('[data-page]').forEach(link=>{if(link.dataset.page===page)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
+ $('page-title').textContent=pages[page].title;$('page-description').textContent=pages[page].description;
+ document.title=({challenges:'集星挑戰',rewards:'兌換獎勵',history:'星星紀錄'})[page]+'｜英雄集星基地';
+ if(moveFocus){const heading=document.querySelector('[data-view="'+page+'"] h2');heading.tabIndex=-1;heading.focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});}
+}
+window.addEventListener('hashchange',()=>showPage(true));showPage();
