@@ -1,1 +1,10 @@
-{"name":"hero-stars","version":"1.0.0","private":true,"scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check app.js && node --check server.mjs"}}
+{
+  "name": "hero-stars",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check app.js && node --check server.mjs && node --check november-plan.js"
+  }
+}
